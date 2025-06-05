@@ -20,5 +20,6 @@ module.exports = {
         'at-rule-no-deprecated': null,
         'order/properties-order': [],
         'no-descending-specificity': null,
+        'selector-class-pattern': '^[a-z0-9_-]+$',
     },
 }
