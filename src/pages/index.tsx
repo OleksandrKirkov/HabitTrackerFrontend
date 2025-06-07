@@ -1,19 +1,14 @@
-import { Geist, Geist_Mono } from 'next/font/google'
+import { RootLayout } from '@/components/layouts/overlay/root-layout/root-layout'
+import { Home } from '@/components/screens/home/home'
 
-const geistSans = Geist({
-    subsets: ['latin'],
-    variable: '--font-geist-sans',
-})
+import { NextPageWithLayout } from './_app'
 
-const geistMono = Geist_Mono({
-    subsets: ['latin'],
-    variable: '--font-geist-mono',
-})
-
-export default function Home() {
-    return (
-        <div className={`${geistSans.className} ${geistMono.className}`}>
-            <main className=''></main>
-        </div>
-    )
+const Page: NextPageWithLayout = () => {
+    return <Home />
 }
+
+Page.getLayout = (page) => {
+    return <RootLayout>{page}</RootLayout>
+}
+
+export default Page
