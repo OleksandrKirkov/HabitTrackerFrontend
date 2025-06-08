@@ -1,0 +1,157 @@
+[
+    {
+        "id": 1,
+        "title": "Clean Desktop",
+        "frequency": {
+            "type": "TimesOfWeek",
+            "times": 1
+        },
+        "reminder": {
+            "enabled": true,
+            "time": "10:00",
+            "repeat": "Once"
+        },
+        "trackedDays": {
+            "2025-06-01": 1,
+            "2025-06-09": 2,
+            "2025-06-21": 1
+        },
+        "color": "yellow",
+        "notificationEnabled": true
+    },
+    {
+        "id": 2,
+        "title": "Read Book",
+        "frequency": {
+            "type": "TimesOfWeek",
+            "times": 4
+        },
+        "reminder": {
+            "enabled": true,
+            "time": "19:00",
+            "repeat": "Daily"
+        },
+        "trackedDays": {
+            "2025-06-01": 1,
+            "2025-06-02": 1,
+            "2025-06-04": 2,
+            "2025-06-06": 1,
+            "2025-06-08": 1,
+            "2025-06-11": 2,
+            "2025-06-13": 1,
+            "2025-06-14": 1,
+            "2025-06-15": 1,
+            "2025-06-17": 2
+        },
+        "color": "violet",
+        "notificationEnabled": true
+    },
+    {
+        "id": 3,
+        "title": "Drink Water",
+        "frequency": {
+            "type": "Everyday"
+        },
+        "reminder": {
+            "enabled": true,
+            "time": "08:00",
+            "repeat": "Daily"
+        },
+        "trackedDays": {
+            "2025-06-01": 5,
+            "2025-06-02": 6,
+            "2025-06-03": 7,
+            "2025-06-04": 6,
+            "2025-06-05": 7,
+            "2025-06-06": 8,
+            "2025-06-07": 7,
+            "2025-06-08": 6,
+            "2025-06-09": 8,
+            "2025-06-10": 7,
+            "2025-06-11": 6,
+            "2025-06-12": 6
+        },
+        "color": "red",
+        "notificationEnabled": true
+    },
+    {
+        "id": 4,
+        "title": "Weekend Exercise",
+        "frequency": {
+            "type": "TimesOfWeek",
+            "times": 2
+        },
+        "reminder": {
+            "enabled": false,
+            "time": "09:00",
+            "repeat": "Once"
+        },
+        "trackedDays": {
+            "2025-06-01": 1,
+            "2025-06-08": 1,
+            "2025-06-15": 2,
+            "2025-06-22": 1,
+            "2025-06-29": 2
+        },
+        "color": "green",
+        "notificationEnabled": false
+    },
+    {
+        "id": 5,
+        "title": "Journaling",
+        "frequency": {
+            "type": "Everyday"
+        },
+        "reminder": {
+            "enabled": true,
+            "time": "22:30",
+            "repeat": "Daily"
+        },
+        "trackedDays": {
+            "2025-06-01": 1,
+            "2025-06-02": 1,
+            "2025-06-03": 1,
+            "2025-06-04": 1,
+            "2025-06-05": 1,
+            "2025-06-06": 1,
+            "2025-06-07": 1,
+            "2025-06-08": 1,
+            "2025-06-10": 1,
+            "2025-06-11": 1,
+            "2025-06-12": 1,
+            "2025-06-13": 1,
+            "2025-06-14": 1,
+            "2025-06-15": 1
+        },
+        "color": "blue",
+        "notificationEnabled": true
+    },
+    {
+        "id": 6,
+        "title": "Limit Coffee",
+        "frequency": {
+            "type": "TimesOfWeek",
+            "times": 5
+        },
+        "reminder": {
+            "enabled": true,
+            "time": "12:00",
+            "repeat": "Daily"
+        },
+        "trackedDays": {
+            "2025-06-01": 1,
+            "2025-06-02": 1,
+            "2025-06-04": 1,
+            "2025-06-06": 1,
+            "2025-06-07": 1,
+            "2025-06-08": 1,
+            "2025-06-10": 1,
+            "2025-06-11": 1,
+            "2025-06-13": 1,
+            "2025-06-14": 1,
+            "2025-06-15": 1
+        },
+        "color": "yellow",
+        "notificationEnabled": true
+    }
+]
