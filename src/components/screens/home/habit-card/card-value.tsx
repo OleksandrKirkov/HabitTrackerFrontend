@@ -1,10 +1,10 @@
 import { ReactNode } from 'react'
 
-import { HabitColors } from '@/types/habit.type'
+import { HabitColor } from '@/types/habit.type'
 
 interface ValueProps {
     children: ReactNode
-    color: HabitColors
+    color: HabitColor
     is_complete: boolean
     is_today: boolean
 }
@@ -28,7 +28,7 @@ function Value({ children, color, is_complete, is_today }: ValueProps) {
 }
 
 interface DayItemProps {
-    color: HabitColors
+    color: HabitColor
     is_complete: boolean
     is_today: boolean
     title: string
