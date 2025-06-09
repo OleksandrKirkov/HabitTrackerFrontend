@@ -7,7 +7,7 @@ import { getColorMap } from '@/utils/get-color-map'
 function Button({ children, className, ...props }: ButtonHTMLAttributes<HTMLButtonElement>) {
     return (
         <button
-            className={`w-9 h-9 rounded-lg flex items-center justify-center ${className}`}
+            className={`w-9 h-9 rounded-lg flex items-center justify-center shadow-item ${className}`}
             {...props}
         >
             {children}
@@ -17,7 +17,7 @@ function Button({ children, className, ...props }: ButtonHTMLAttributes<HTMLButt
 
 export function Frequency({ color, frequency }: HabitType) {
     return (
-        <div className='flex items-center bg-secondary rounded-xl overflow-hidden p-4 gap-2 mb-4'>
+        <div className='flex items-center bg-secondary rounded-xl overflow-hidden p-4 gap-2 mb-4 shadow-card'>
             <h2 className='font-bold text-white leading-none'>Frequency</h2>
 
             <p className='text-text text-sm ml-auto'>{frequency.type}</p>
