@@ -1,3 +1,7 @@
 export { AddIcon } from './add-icon'
+export { ArrowIcon } from './arrow-icon'
 export { BurgerIcon } from './burger-icon'
+export { MinusIcon } from './minus-icon'
 export { NotificationIcon } from './notification-icon'
+export { PlusIcon } from './plus-icon'
+export { SettingsIcon } from './settings-icon'
