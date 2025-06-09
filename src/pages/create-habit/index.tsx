@@ -1,5 +1,5 @@
 import { CreateHabit } from '@/components/screens/create-habit/create-habit'
 
-export function Page() {
+export default function Page() {
     return <CreateHabit />
 }

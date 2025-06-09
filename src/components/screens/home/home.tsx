@@ -1,6 +1,5 @@
 import { AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 
 import { AddIcon } from '@/components/svg'
 
@@ -9,7 +8,6 @@ import { useHabit } from './hook/useHabit'
 
 export function Home() {
     const { habits, isLoading } = useHabit()
-    const router = useRouter()
 
     return (
         <div className='h-full'>
