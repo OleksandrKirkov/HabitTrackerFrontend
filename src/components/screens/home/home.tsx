@@ -1,4 +1,6 @@
 import { AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import { AddIcon } from '@/components/svg'
 
@@ -7,6 +9,7 @@ import { useHabit } from './hook/useHabit'
 
 export function Home() {
     const { habits, isLoading } = useHabit()
+    const router = useRouter()
 
     return (
         <div className='h-full'>
@@ -21,11 +24,11 @@ export function Home() {
                     <p key='habits-loading'>Loading</p>
                 )}
 
-                <div>
-                    <button className='flex items-center gap-2 mx-auto'>
+                <div className='flex justify-center'>
+                    <Link href='/create-habit' className='inline-flex items-center gap-2 mx-auto'>
                         <AddIcon className='w-4 h-4 stroke-text' />
                         <p className='text-sm leading-none text-text'>Add a new habit</p>
-                    </button>
+                    </Link>
                 </div>
             </AnimatePresence>
         </div>
