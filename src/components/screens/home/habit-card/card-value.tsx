@@ -12,7 +12,7 @@ interface ValueProps {
 function Value({ children, color, is_complete, is_today }: ValueProps) {
     return is_today ? (
         <div
-            className={`flex justify-center items-center w-8 h-8 rounded-full border border-solid border-${is_complete ? 'yellow' : 'primary'}`}
+            className={`flex justify-center items-center w-8 h-8 rounded-full shadow-item border border-solid border-${is_complete ? 'yellow' : 'primary'}`}
         >
             <p
                 className={`text-center text-sm text-${is_complete ? color : 'primary'} leading-none`}
@@ -21,7 +21,9 @@ function Value({ children, color, is_complete, is_today }: ValueProps) {
             </p>
         </div>
     ) : (
-        <div className={`flex justify-center items-center w-8 h-8 rounded-full bg-primary `}>
+        <div
+            className={`flex justify-center items-center w-8 h-8 rounded-full bg-primary shadow-item`}
+        >
             <p className={`text-center text-sm text-white leading-loose`}>{children}</p>
         </div>
     )
