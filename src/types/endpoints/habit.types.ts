@@ -33,6 +33,26 @@ export type CreateHabitRequest = {
     reminderMode: string
 }
 
-export type GetHabitsByUser = {
+export type GetHabitsByUserResponse = {
     habits: Habit[]
+}
+
+export type UpdateFrequencyRequest = {
+    id: string
+    frequency: number
+}
+
+export type UpdateReminderTimeRequest = {
+    id: string
+    time: string
+}
+
+export type UpdateReminderModeRequest = {
+    id: string
+    mode: string
+}
+
+export type UpdateReminderStateRequest = {
+    id: string
+    state: boolean
 }
