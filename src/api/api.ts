@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import Cookies from 'js-cookie'
 
+import { authEndpoint } from './endpoints/authEndpoint'
 import { habitEndpoint } from './endpoints/habitEndpoint'
 
 const baseQuery = fetchBaseQuery({
@@ -16,6 +17,7 @@ export const api = createApi({
     baseQuery,
     endpoints: (builder) => ({
         ...habitEndpoint(builder),
+        ...authEndpoint(builder),
     }),
     reducerPath: 'api',
 })
@@ -26,6 +28,11 @@ export const {
     useDeleteHabitMutation,
     useGetHabitByIdQuery,
     useGetHabitsByUserIdQuery,
+    useLoginMutation,
+    useLogoutMutation,
+    useMeQuery,
+    useRefreshMutation,
+    useRegisterMutation,
     useUpdateHabitFrequencyMutation,
     useUpdateHabitReminderModeMutation,
     useUpdateHabitReminderStateMutation,
