@@ -7,12 +7,12 @@ import { HabitCard } from './habit-card/habit-card'
 import { useHabit } from './hook/useHabit'
 
 export function Home() {
-    const { habits, isLoading } = useHabit()
+    const { habits, isLoading: isHabitLoading } = useHabit()
 
     return (
         <div className='h-full'>
             <AnimatePresence>
-                {!isLoading ? (
+                {!isHabitLoading ? (
                     <div key='habits-list' className='flex flex-col gap-4 mb-4'>
                         {habits.map((habit, index) => (
                             <HabitCard key={`${habit.id}_${index}`} {...habit} />
