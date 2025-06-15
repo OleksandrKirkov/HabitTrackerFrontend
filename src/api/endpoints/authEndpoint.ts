@@ -22,7 +22,7 @@ export const authEndpoint = (builder: EndpointBuilder<BaseQueryFn, never, 'api'>
         }),
     }),
     me: builder.query<MeResponse, void>({
-        query: () => 'me',
+        query: () => 'auth/me',
     }),
     refresh: builder.mutation<TokenResponse, void>({
         query: () => ({
