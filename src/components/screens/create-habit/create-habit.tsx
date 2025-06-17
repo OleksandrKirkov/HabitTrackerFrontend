@@ -59,17 +59,18 @@ export function CreateHabit() {
         onChangeName,
         onChangeReminderRepeat,
         onChangeReminderTime,
+        onCreateHabit,
         onToggleReminderState,
         reminder,
     } = useCreateHabit()
 
     const onChangeReminderRepeatHandler = useCallback(() => {
         switch (reminder.repeat) {
-            case 'Daily':
-                onChangeReminderRepeat('Once')
+            case 'daily':
+                onChangeReminderRepeat('once')
                 break
-            case 'Once':
-                onChangeReminderRepeat('Daily')
+            case 'once':
+                onChangeReminderRepeat('daily')
                 break
         }
     }, [reminder.repeat, onChangeReminderRepeat])
@@ -157,7 +158,10 @@ export function CreateHabit() {
                     </div>
                 </Field>
 
-                <button className='h-12 w-full bg-primary shadow-card rounded-2xl text-white mt-auto block'>
+                <button
+                    className='h-12 w-full bg-primary shadow-card rounded-2xl text-white mt-auto block'
+                    onClick={onCreateHabit}
+                >
                     Create Habit
                 </button>
             </div>

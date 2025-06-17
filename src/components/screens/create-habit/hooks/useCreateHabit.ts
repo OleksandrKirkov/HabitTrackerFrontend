@@ -1,8 +1,12 @@
+import { useRouter } from 'next/router'
 import { useCallback, useState } from 'react'
 
+import { useCreateHabitMutation } from '@/api/api'
 import { HabitColor, HabitReminder, ReminderRepeat } from '@/types/habit.type'
 
 export function useCreateHabit() {
+    const router = useRouter()
+
     const [nameState, setNameState] = useState('')
     const [colorState, setColorState] = useState<HabitColor>('yellow')
 
@@ -10,12 +14,14 @@ export function useCreateHabit() {
 
     const [reminderState, setReminderState] = useState<HabitReminder>({
         enabled: false,
-        repeat: 'Once',
+        repeat: 'once',
         time: '00:00',
     })
 
+    const [createHabit] = useCreateHabitMutation()
+
     const onChangeName = useCallback((name: string) => {
-        setNameState(name)
+        setNameState((prev) => (prev.split('').length < 48 ? name : prev))
     }, [])
 
     const onChangeColor = useCallback((color: HabitColor) => {
@@ -23,14 +29,14 @@ export function useCreateHabit() {
     }, [])
 
     const onChangeFrequencyTime = useCallback((type: 'minus' | 'plus') => {
-        switch (type) {
-            case 'plus':
-                setFrequencyTimeState((prev) => prev + 1)
-                break
-            case 'minus':
-                setFrequencyTimeState((prev) => prev - 1)
-                break
-        }
+        setFrequencyTimeState((prev) => {
+            switch (type) {
+                case 'plus':
+                    return prev < 7 ? prev + 1 : prev
+                case 'minus':
+                    return prev > 1 ? prev - 1 : prev
+            }
+        })
     }, [])
 
     const onToggleReminderState = useCallback((checked: boolean) => {
@@ -45,6 +51,24 @@ export function useCreateHabit() {
         setReminderState((prev) => ({ ...prev, time }))
     }, [])
 
+    const onCreateHabit = useCallback(async () => {
+        try {
+            await createHabit({
+                color: colorState,
+                frequency: frequencyTimeState,
+                icon: '1',
+                reminderMode: reminderState.repeat,
+                reminderTime: reminderState.time,
+                title: nameState,
+                type: 'counter',
+            }).unwrap()
+
+            router.push('/')
+        } catch (e: unknown) {
+            console.error(e)
+        }
+    }, [createHabit, colorState, frequencyTimeState, reminderState, nameState, router])
+
     return {
         color: colorState,
         frequencyTime: frequencyTimeState,
@@ -55,6 +79,7 @@ export function useCreateHabit() {
         onChangeName,
         onChangeReminderRepeat,
         onChangeReminderTime,
+        onCreateHabit,
         onToggleReminderState,
         reminder: reminderState,
     }
