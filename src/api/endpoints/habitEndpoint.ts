@@ -2,7 +2,6 @@ import { BaseQueryFn, EndpointBuilder } from '@reduxjs/toolkit/query/react'
 
 import {
     CreateHabitRequest,
-    GetHabitsByUserResponse,
     Habit,
     UpdateFrequencyRequest,
     UpdateReminderModeRequest,
@@ -28,10 +27,10 @@ const habitEndpoint = (builder: EndpointBuilder<BaseQueryFn, never, 'api'>) => (
         }),
     }),
     getHabitById: builder.query<Habit, number>({
-        query: (userId) => `habit/user/${userId}`,
+        query: (id) => `habit/${id}`,
     }),
-    getHabitsByUserId: builder.query<GetHabitsByUserResponse, number>({
-        query: (id) => `habit/${id}/archive`,
+    getHabits: builder.query<Habit[], void>({
+        query: () => `habit/my`,
     }),
     updateHabitFrequency: builder.mutation<void, UpdateFrequencyRequest>({
         query: ({ id, ...request }) => ({

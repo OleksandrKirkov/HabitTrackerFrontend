@@ -18,7 +18,7 @@ export const {
     useCreateHabitMutation,
     useDeleteHabitMutation,
     useGetHabitByIdQuery,
-    useGetHabitsByUserIdQuery,
+    useGetHabitsQuery,
     useLoginMutation,
     useLogoutMutation,
     useMeQuery,
