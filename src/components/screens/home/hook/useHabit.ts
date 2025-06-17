@@ -1,34 +1,10 @@
-import { useCallback, useEffect, useState } from 'react'
-
-import { HabitType } from '@/types/habit.type'
+import { useGetHabitsQuery } from '@/api/api'
 
 export function useHabit() {
-    const [habitsState, setHabitsState] = useState<HabitType[]>([])
-    const [isLoading, setIsLoading] = useState(true)
-
-    const getHabits = useCallback(async () => {
-        try {
-            setIsLoading(true)
-
-            const response = await import('../../../../../public/data/habits-list.json')
-
-            const habits: HabitType[] = response.default as HabitType[]
-
-            setHabitsState(habits)
-        } catch (e: unknown) {
-            console.error(e)
-        } finally {
-            setIsLoading(false)
-        }
-    }, [])
-
-    useEffect(() => {
-        getHabits()
-    }, [getHabits])
+    const { data: habits = [], isLoading } = useGetHabitsQuery()
 
     return {
-        getHabits,
-        habits: habitsState,
+        habits: habits,
         isLoading,
     }
 }

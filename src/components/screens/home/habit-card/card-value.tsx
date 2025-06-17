@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 
 import { HabitColor } from '@/types/habit.type'
+import { getColorMap } from '@/utils/get-color-map'
 
 interface ValueProps {
     children: ReactNode
@@ -12,17 +13,17 @@ interface ValueProps {
 function Value({ children, color, is_complete, is_today }: ValueProps) {
     return is_today ? (
         <div
-            className={`flex justify-center items-center w-8 h-8 rounded-full shadow-item border border-solid border-${is_complete ? 'yellow' : 'primary'}`}
+            className={`flex justify-center items-center w-8 h-8 rounded-full shadow-item border border-solid ${is_complete ? 'border-transparent' : getColorMap('border', color)} ${is_complete ? getColorMap('bg', color) : 'bg-transparent'}`}
         >
             <p
-                className={`text-center text-sm text-${is_complete ? color : 'primary'} leading-none`}
+                className={`text-center text-sm ${is_complete ? 'text-white' : getColorMap('text', color)} leading-none`}
             >
                 {children}
             </p>
         </div>
     ) : (
         <div
-            className={`flex justify-center items-center w-8 h-8 rounded-full bg-primary shadow-item`}
+            className={`flex justify-center items-center w-8 h-8 rounded-full ${is_complete ? getColorMap('bg', color) : 'bg-primary'} shadow-item`}
         >
             <p className={`text-center text-sm text-white leading-loose`}>{children}</p>
         </div>
