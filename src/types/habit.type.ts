@@ -2,7 +2,7 @@ export type HabitColor = 'blue' | 'green' | 'red' | 'violet' | 'yellow'
 
 export type HabitFrequencyKind = 'Everyday' | 'TimesOfWeek'
 
-export type ReminderRepeat = 'Daily' | 'Once'
+export type ReminderRepeat = 'daily' | 'once'
 
 export type HabitFrequency = {
     type: HabitFrequencyKind

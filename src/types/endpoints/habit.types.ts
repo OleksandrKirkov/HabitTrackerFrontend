@@ -15,7 +15,7 @@ export type Habit = {
     isArchived: boolean
     createdAt: string
     updatedAt: string
-    habitLogs: HabitLog
+    habitLogs: HabitLog[]
 }
 
 export const HabitType = {}
@@ -23,7 +23,6 @@ export const HabitType = {}
 export const ReminderMode = {}
 
 export type CreateHabitRequest = {
-    userId: string
     title: string
     color: string
     icon: string
@@ -31,10 +30,6 @@ export type CreateHabitRequest = {
     type: string
     reminderTime: string
     reminderMode: string
-}
-
-export type GetHabitsByUserResponse = {
-    habits: Habit[]
 }
 
 export type UpdateFrequencyRequest = {
