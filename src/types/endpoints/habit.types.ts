@@ -49,5 +49,5 @@ export type UpdateReminderModeRequest = {
 
 export type UpdateReminderStateRequest = {
     id: string
-    state: boolean
+    enabled: boolean
 }
