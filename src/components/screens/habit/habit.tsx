@@ -18,7 +18,7 @@ export function Habit() {
                 {!isLoading ? (
                     habit ? (
                         <div key='habit-content'>
-                            <Header title={habit.title} />
+                            <Header title={habit.title} id={Number(habit.id)} />
 
                             <div className='w-full h-full p-4'>
                                 <Frequency {...habit} />

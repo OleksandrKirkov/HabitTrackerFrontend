@@ -1,5 +1,6 @@
 import { AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 import { AddIcon } from '@/components/svg'
 
@@ -7,7 +8,11 @@ import { HabitCard } from './habit-card/habit-card'
 import { useHabit } from './hook/useHabit'
 
 export function Home() {
-    const { habits, isLoading } = useHabit()
+    const { habits, isLoading, refetch } = useHabit()
+
+    useEffect(() => {
+        refetch()
+    }, [])
 
     return (
         <div className='h-full'>
