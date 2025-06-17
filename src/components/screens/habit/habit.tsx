@@ -6,7 +6,6 @@ import { Header } from './header/header'
 import { History } from './history/history'
 import { useHabit } from './hooks/useHabit'
 import { Reminder } from './reminder/reminder'
-import { Statisctic } from './statisctic/statisctic'
 
 export function Habit() {
     const router = useRouter()
@@ -27,8 +26,6 @@ export function Habit() {
                                 <Reminder {...habit} />
 
                                 <History {...habit} />
-
-                                <Statisctic {...habit} />
                             </div>
                         </div>
                     ) : (
