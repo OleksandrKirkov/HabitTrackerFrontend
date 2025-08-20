@@ -6,3 +6,14 @@ export type HabitLog = {
     value: number
     createAt: string
 }
+
+export type CompleteHabitLogResponse = {
+    date: string
+    value: number
+}
+
+export type CompleteHabitLogRequest = {
+    id: number
+    date: string
+    value: number
+}

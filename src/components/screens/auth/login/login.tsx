@@ -43,12 +43,14 @@ export function Login({ className, ...props }: LoginProps) {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder='Електронна пошта'
                     className='mb-2'
+                    type='email'
                 />
                 <TextField
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder='Пароль'
                     className='mb-2'
+                    type='password'
                 />
                 <Button type='submit'>Увійти</Button>
             </form>
